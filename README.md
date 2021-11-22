@@ -20,7 +20,7 @@ limitations under the License.
 
 # US Birth Data (1994-2003)
 
-[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] [![dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > US birth data from 1994 to 2003, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.
 
@@ -224,8 +224,8 @@ The data files (databases) are licensed under an [Open Data Commons Public Domai
 
 ## See Also
 
--   [`@stdlib/datasets/cdc-nchs-us-births-1969-1988`][@stdlib/datasets/cdc-nchs-us-births-1969-1988]: US birth data from 1969 to 1988, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.
--   [`@stdlib/datasets/ssa-us-births-2000-2014`][@stdlib/datasets/ssa-us-births-2000-2014]: US birth data from 2000 to 2014, as provided by the Social Security Administration.
+-   <span class="package-name">[`@stdlib/datasets/cdc-nchs-us-births-1969-1988`][@stdlib/datasets/cdc-nchs-us-births-1969-1988]</span><span class="delimiter">: </span><span class="description">US birth data from 1969 to 1988, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.</span>
+-   <span class="package-name">[`@stdlib/datasets/ssa-us-births-2000-2014`][@stdlib/datasets/ssa-us-births-2000-2014]</span><span class="delimiter">: </span><span class="description">US birth data from 2000 to 2014, as provided by the Social Security Administration.</span>
 
 </section>
 
@@ -271,8 +271,12 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/datasets-cdc-nchs-us-births-1994-2003?branch=main
 
+<!--
+
 [dependencies-image]: https://img.shields.io/david/stdlib-js/datasets-cdc-nchs-us-births-1994-2003.svg
 [dependencies-url]: https://david-dm.org/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/main
+
+-->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
