@@ -37,6 +37,7 @@ Alternatively,
 -   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
 -   If you are using Deno, visit the [`deno` branch][deno-url].
 -   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
 The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
@@ -157,10 +158,10 @@ for ( i = 0; i < 7; i++ ) {
 
 ## Installation
 
-To use the module as a general utility, install the module globally
+To use as a general utility, install the CLI package globally
 
 ```bash
-npm install -g @stdlib/datasets-cdc-nchs-us-births-1994-2003
+npm install -g @stdlib/datasets-cdc-nchs-us-births-1994-2003-cli
 ```
 
 </section>
@@ -234,8 +235,8 @@ The data files (databases) are licensed under an [Open Data Commons Public Domai
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/datasets/cdc-nchs-us-births-1969-1988`][@stdlib/datasets/cdc-nchs-us-births-1969-1988]</span><span class="delimiter">: </span><span class="description">US birth data from 1969 to 1988, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.</span>
--   <span class="package-name">[`@stdlib/datasets/ssa-us-births-2000-2014`][@stdlib/datasets/ssa-us-births-2000-2014]</span><span class="delimiter">: </span><span class="description">US birth data from 2000 to 2014, as provided by the Social Security Administration.</span>
+-   <span class="package-name">[`@stdlib/datasets-cdc-nchs-us-births-1969-1988`][@stdlib/datasets/cdc-nchs-us-births-1969-1988]</span><span class="delimiter">: </span><span class="description">US birth data from 1969 to 1988, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.</span>
+-   <span class="package-name">[`@stdlib/datasets-ssa-us-births-2000-2014`][@stdlib/datasets/ssa-us-births-2000-2014]</span><span class="delimiter">: </span><span class="description">US birth data from 2000 to 2014, as provided by the Social Security Administration.</span>
 
 </section>
 
@@ -294,6 +295,10 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [stdlib]: https://github.com/stdlib-js/stdlib
 
 [stdlib-authors]: https://github.com/stdlib-js/stdlib/graphs/contributors
+
+[cli-section]: https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003#cli
+[cli-url]: https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/tree/cli
+[@stdlib/datasets-cdc-nchs-us-births-1994-2003]: https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/tree/main
 
 [umd]: https://github.com/umdjs/umd
 [es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
