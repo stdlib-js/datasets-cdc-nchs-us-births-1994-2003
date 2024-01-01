@@ -35,17 +35,135 @@ limitations under the License.
 
 > US birth data from 1994 to 2003, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.
 
+<section class="installation">
 
+## Installation
 
+```bash
+npm install @stdlib/datasets-cdc-nchs-us-births-1994-2003
+```
 
+Alternatively,
 
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
+</section>
 
+<section class="usage">
+
+## Usage
+
+```javascript
+var dataset = require( '@stdlib/datasets-cdc-nchs-us-births-1994-2003' );
+```
+
+#### dataset()
+
+Returns US birth data from 1994 to 2003, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.
+
+```javascript
+var data = dataset();
+// returns [ {...}, ... ]
+```
+
+Each element in the returned database has the following fields:
+
+-   **year**: year.
+-   **month**: month, where January is denoted by `1`.
+-   **date_of_month**: day number of the month.
+-   **day_of_week**: day of week, where Monday is `1` and Sunday is `7`.
+-   **births**: number of births.
+
+</section>
+
+<!-- /.usage -->
+
+<section class="examples">
+
+## Examples
+
+<!-- eslint no-undef: "error" -->
+
+```javascript
+var incrmean = require( '@stdlib/stats-incr-mean' );
+var dataset = require( '@stdlib/datasets-cdc-nchs-us-births-1994-2003' );
+
+function mean( a, b ) {
+    return ( a + b ) / 2.0;
+}
+
+function reldiff( a, b ) {
+    return 100.0 * ( (a-b)/a );
+}
+
+/*
+* GOAL: determine whether people avoid giving birth on the 13th of each month.
+*
+* NOTE: for a more thorough analysis, we'd account for holidays.
+*/
+
+// Retrieve the data:
+var data = dataset();
+
+// Initialize arrays for storing births for particular day numbers:
+var d6or20 = [ [], [], [], [], [], [], [] ];
+var d13 = [ [], [], [], [], [], [], [] ];
+
+// Extract the day number data...
+var d;
+var w;
+var i;
+for ( i = 0; i < data.length; i++ ) {
+    d = data[ i ].date_of_month;
+    w = data[ i ].day_of_week;
+    if ( d === 6 ) {
+        // Average of days 6 and 20 for the same month:
+        d6or20[ w-1 ].push( mean( data[ i ].births, data[ i+14 ].births ) );
+    } else if ( d === 13 ) {
+        d13[ w-1 ].push( data[ i ].births );
+    }
+}
+
+// Initialize accumulators for computing the average relative difference...
+var means = [];
+for ( i = 0; i < 7; i++ ) {
+    means.push( incrmean() );
+}
+
+// Compute the average relative difference between days 6/20 with day 13...
+var l1;
+var l2;
+var mu;
+var j;
+for ( i = 0; i < 7; i++ ) {
+    l1 = d13[ i ];
+    l2 = d6or20[ i ];
+    mu = means[ i ];
+    for ( j = 0; j < l1.length; j++ ) {
+        mu( reldiff( l1[ j ], l2[ j ] ) );
+    }
+}
+
+// Print the results...
+for ( i = 0; i < 7; i++ ) {
+    console.log( '%d: %d%', i+1, means[ i ]().toFixed( 3 ) );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -63,7 +181,7 @@ npm install -g @stdlib/datasets-cdc-nchs-us-births-1994-2003-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: cdc-nchs-us-births-1994-2003 [options]
@@ -80,13 +198,13 @@ Options:
 
 <section class="notes">
 
-## Notes
+### Notes
 
 -   Data is written to `stdout` as comma-separated values ([CSV][csv]), where the first line is a header line.
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ cdc-nchs-us-births-1994-2003
@@ -124,9 +242,10 @@ The data files (databases) are licensed under an [Open Data Commons Public Domai
 
 <section class="related">
 
+* * *
+
 ## See Also
 
--   <span class="package-name">[`@stdlib/datasets-cdc-nchs-us-births-1994-2003`][@stdlib/datasets-cdc-nchs-us-births-1994-2003]</span><span class="delimiter">: </span><span class="description">uS birth data from 1994 to 2003, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.</span>
 -   <span class="package-name">[`@stdlib/datasets-cdc-nchs-us-births-1969-1988`][@stdlib/datasets/cdc-nchs-us-births-1969-1988]</span><span class="delimiter">: </span><span class="description">US birth data from 1969 to 1988, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.</span>
 -   <span class="package-name">[`@stdlib/datasets-ssa-us-births-2000-2014`][@stdlib/datasets/ssa-us-births-2000-2014]</span><span class="delimiter">: </span><span class="description">US birth data from 2000 to 2014, as provided by the Social Security Administration.</span>
 
@@ -147,7 +266,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -155,7 +274,7 @@ For more information on the project, filing bug reports and feature requests, an
 
 ## Copyright
 
-Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -165,8 +284,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/datasets-cdc-nchs-us-births-1994-2003-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/datasets-cdc-nchs-us-births-1994-2003-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/datasets-cdc-nchs-us-births-1994-2003.svg
+[npm-url]: https://npmjs.org/package/@stdlib/datasets-cdc-nchs-us-births-1994-2003
 
 [test-image]: https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/actions/workflows/test.yml/badge.svg?branch=main
 [test-url]: https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/actions/workflows/test.yml?query=branch:main
