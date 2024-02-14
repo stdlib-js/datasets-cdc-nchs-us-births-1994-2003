@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@esm/index.mjs';
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@v0.2.0-esm/index.mjs';
 ```
 
 #### dataset()
@@ -79,7 +79,7 @@ Each element in the returned database has the following fields:
 <script type="module">
 
 import incrmean from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-incr-mean@esm/index.mjs';
-import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@esm/index.mjs';
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@v0.2.0-esm/index.mjs';
 
 function mean( a, b ) {
     return ( a + b ) / 2.0;
