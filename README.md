@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/datasets-cdc-nchs-us-births-1994-2003/tags). For example,
+
+```javascript
 import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@v0.2.1-esm/index.mjs';
 ```
 
@@ -79,7 +84,7 @@ Each element in the returned database has the following fields:
 <script type="module">
 
 import incrmean from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-incr-mean@esm/index.mjs';
-import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@v0.2.1-esm/index.mjs';
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-cdc-nchs-us-births-1994-2003@esm/index.mjs';
 
 function mean( a, b ) {
     return ( a + b ) / 2.0;
