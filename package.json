@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/datasets-cdc-nchs-us-births-1994-2003",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "US birth data from 1994 to 2003, as provided by the Center for Disease Control and Prevention's National Center for Health Statistics.",
   "license": "Apache-2.0",
   "author": {
@@ -43,20 +43,20 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/cli-ctor": "^0.2.2",
-    "@stdlib/fs-read-file": "^0.2.2",
-    "@stdlib/fs-read-json": "^0.2.3",
+    "@stdlib/cli-ctor": "^0.2.3",
+    "@stdlib/fs-read-file": "^0.2.3",
+    "@stdlib/fs-read-json": "^0.2.4",
     "@stdlib/streams-node-stdout": "^0.2.3",
     "@stdlib/utils-copy": "^0.2.2"
   },
   "devDependencies": {
-    "@stdlib/assert-is-array": "^0.2.2",
-    "@stdlib/assert-is-browser": "^0.2.2",
-    "@stdlib/assert-is-object-array": "^0.2.2",
-    "@stdlib/assert-is-windows": "^0.2.2",
-    "@stdlib/fs-write-file": "^0.2.2",
-    "@stdlib/process-exec-path": "^0.2.2",
-    "@stdlib/regexp-eol": "^0.2.2",
+    "@stdlib/assert-is-array": "^0.2.3",
+    "@stdlib/assert-is-browser": "^0.2.3",
+    "@stdlib/assert-is-object-array": "^0.2.3",
+    "@stdlib/assert-is-windows": "^0.2.3",
+    "@stdlib/fs-write-file": "^0.2.3",
+    "@stdlib/process-exec-path": "^0.2.3",
+    "@stdlib/regexp-eol": "^0.2.3",
     "@stdlib/stats-incr-mean": "^0.2.3",
     "proxyquire": "^2.0.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
