@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-05-03)
+## Unreleased (2026-05-17)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`dca1108`](https://github.com/stdlib-js/stdlib/commit/dca1108ecd60ec63ce4dcb4305000c2390c93c49) - **chore:** use `format` for error messages in `datasets/*` build scripts [(#12157)](https://github.com/stdlib-js/stdlib/pull/12157) _(by Philipp Burckhardt)_
 -   [`a297305`](https://github.com/stdlib-js/stdlib/commit/a2973058c05b9d01c7045190a06568d4fefdf5c5) - **bench:** refactor to use string interpolation in `datasets` [(#11618)](https://github.com/stdlib-js/stdlib/pull/11618) _(by Karan Anand)_
 
 </details>
@@ -24,9 +25,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
 -   Karan Anand
+-   Philipp Burckhardt
 
 </section>
 
